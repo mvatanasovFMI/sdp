@@ -1,0 +1,4 @@
+﻿  main.cc
+c:\users\grade\desktop\сдп\sdp\stack\stack\stack.h(97): warning C4715: 'Stack<double>::top': not all control paths return a value
+c:\users\grade\desktop\сдп\sdp\stack\stack\stack.h(91): warning C4715: 'Stack<double>::pop': not all control paths return a value
+  Stack.vcxproj -> C:\Users\grade\Desktop\СДП\sdp\stack\Debug\Stack.exe
