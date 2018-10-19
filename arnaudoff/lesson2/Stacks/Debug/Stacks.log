@@ -1,0 +1,3 @@
+﻿  Stacks.cpp
+c:\users\grade\source\repos\stacks\stacks\stacks.cpp(103): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Stacks.vcxproj -> C:\Users\grade\source\repos\Stacks\Debug\Stacks.exe
