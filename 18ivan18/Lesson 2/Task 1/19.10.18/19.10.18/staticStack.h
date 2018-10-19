@@ -23,6 +23,7 @@ public:
 	bool isEmpty();
 	bool isFull();
 	T peek();
+	void sort();
 
 };
 
@@ -32,8 +33,11 @@ inline void staticStack<T>::copy(const staticStack& other)
 	capacity = other.capacity;
 	top = other.top;
 	data = new T[capacity];
-	copy(other.data, other.data + top, data);
-	
+	//std::copy(other.data, other.data + top, data);
+	for (int i = 0; i <= top; i++)
+	{
+		data[i] = other.data[i];
+	}
 }
 
 template<typename T>
@@ -128,4 +132,19 @@ inline T staticStack<T>::peek()
 		exit(1);
 	}
 	return data[top];
+}
+
+template<typename T>
+inline void staticStack<T>::sort()
+{
+	staticStack<T> temp;
+	T t;
+	while (!isEmpty()) {
+	t = pop();
+		while (!temp.isEmpty() && temp.peek()>t) {
+			push(temp.pop());
+		}
+		temp.push(t);
+	}
+	*this = temp;
 }

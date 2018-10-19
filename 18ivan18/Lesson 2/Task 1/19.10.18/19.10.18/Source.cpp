@@ -12,7 +12,10 @@ int main() {
 	while (file >> number) {
 		s.push(number);
 	}
-	
+	s.sort();
+	while (!s.isEmpty()) {
+		cout << s.pop() << endl;
+	}
 	file.close();
 	return 0;
 }
