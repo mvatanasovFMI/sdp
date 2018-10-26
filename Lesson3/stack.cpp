@@ -3,6 +3,7 @@
 #include <fstream>
 #include <chrono>
 #include <string>
+#include <stack>
 using namespace std;
 
 const int NUM = 20;
@@ -132,7 +133,18 @@ int main() {
 	auto time = std::chrono::duration_cast<chrono::nanoseconds> (end - start);
 	cout << endl;
 	cout << "Duration: " << time.count() << endl;
+	stack<string> otherStack;
+	myFile.clear();
+	myFile.seekg(0, ios::beg);
+	while (myFile >> text) {
+		otherStack.push(text);
+	}
+	while (!otherStack.empty()) {
+		cout << otherStack.top() << " ";
+		otherStack.pop();
+	}
 	system("pause");
 	return 0;
 }
+
 
