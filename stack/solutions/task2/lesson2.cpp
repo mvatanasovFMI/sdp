@@ -7,7 +7,7 @@ using std::endl;
 using std::ifstream;
 using std::string;
 
-const int MAX = 100;
+const int MAX = 100000;
 
 template <typename T>
 class Stack {
@@ -65,7 +65,7 @@ void Stack<T>::sortStack() {
 template <typename T>
 void Stack<T>::printStack() {
 	while(!empty()) {
-		printf("%f\n", pop()); //TODO: no pop!!
+		printf("%c", pop()); //TODO: no pop!!
 	}
 }
 
@@ -92,18 +92,16 @@ T Stack<T>::top() const {
 int main() {
 	clock_t tStart = clock();
 
-	Stack<float> st1;
+	Stack<char> st1;
 
 	ifstream StackData;
-	StackData.open("../../stackData.txt");
+	StackData.open("text.txt");
 
-	float n;
+	char n;
 
-	while (StackData >> n) {
+	while (StackData.get(n)) {
 		st1.push(n);
 	}
-
- 	st1.sortStack();
 
  	st1.printStack();
 
