@@ -8,19 +8,19 @@ const int RESIZE = 100;
 
 template <typename T>
 
-class Stack
+class MyStack
 {
 private:
 	T* arr;
 	int size;
 	int capacity;
 	void resize();
-	void copyStack(const Stack&);
+	void copyStack(const MyStack&);
 public:
-	Stack();
-	Stack(const Stack&);
-	Stack& operator=(const Stack&);
-	~Stack();
+	MyStack();
+	MyStack(const MyStack&);
+	MyStack& operator=(const MyStack&);
+	~MyStack();
 
 	void push(const T&);
 	T& pop();
@@ -31,7 +31,7 @@ public:
 };
 
 template<typename T>
-void Stack<T>::resize()
+void MyStack<T>::resize()
 {
 	capacity += RESIZE;
 	T* temp = arr;
@@ -41,7 +41,7 @@ void Stack<T>::resize()
 }
 
 template<typename T>
-void Stack<T>::copyStack(const Stack& other)
+void MyStack<T>::copyStack(const MyStack& other)
 {
 	size = other.size;
 	capacity = other.capacity;
@@ -50,18 +50,18 @@ void Stack<T>::copyStack(const Stack& other)
 }
 
 template<typename T>
-Stack<T>::Stack() : size(0), capacity(1), arr(NULL)
+MyStack<T>::MyStack() : size(0), capacity(1), arr(NULL)
 {
 }
 
 template<typename T>
-Stack<T>::Stack(const Stack& other)
+MyStack<T>::MyStack(const MyStack& other)
 {
 	copyStack(other);
 }
 
 template<typename T>
-Stack<T>& Stack<T>::operator=(const Stack& other)
+MyStack<T>& MyStack<T>::operator=(const MyStack& other)
 {
 	if (this != &other)
 	{
@@ -72,32 +72,32 @@ Stack<T>& Stack<T>::operator=(const Stack& other)
 }
 
 template<typename T>
-Stack<T>::~Stack()
+MyStack<T>::~MyStack()
 {
 	delete arr;
 }
 
 template<typename T>
-void Stack<T>::push(const T & elem)
+void MyStack<T>::push(const T & elem)
 {
 	if (size == capacity - 1) { resize(); }
 	arr[size++] = elem;
 }
 
 template<typename T>
-T & Stack<T>::pop()
+T & MyStack<T>::pop()
 {
 	if (size > 0) { size--; return arr[size]; }
 }
 
 template<typename T>
-T & Stack<T>::top()
+T & MyStack<T>::top()
 {
 	if (size > 0) { return arr[size - 1]; }
 }
 
 template<typename T>
-void Stack<T>::print()
+void MyStack<T>::print()
 {
 	while (!isEmpty())
 	{
@@ -106,16 +106,16 @@ void Stack<T>::print()
 }
 
 template<typename T>
-inline bool Stack<T>::isEmpty() const
+inline bool MyStack<T>::isEmpty() const
 {
 	return size == 0;
 }
 
 template<typename T>
-void Stack<T>::sort()
+void MyStack<T>::sort()
 {
-	Stack<T> tmpStack;
-	Stack<T> input = *this;
+	MyStack<T> tmpStack;
+	MyStack<T> input = *this;
 	while (!input.isEmpty())
 	{
 		T tmp = input.top();
