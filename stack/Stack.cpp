@@ -1,14 +1,18 @@
-﻿#include<iostream>
+﻿#include <iostream>
 #include "Stack.h"
 #include "chrono"
 #include <ctime>
 #include <fstream>
+#include <string>
 using namespace std;
 
-stack::stack() {
+template <typename T>
+stack<T>::stack<T>() {
 	n = -1;
 }
-void stack::push(const double& x) {
+
+template <typename T>
+void stack<T>::push(T& x) {
 	if (!full()) {
 		n++;
 		arr[n] = x;
@@ -18,7 +22,9 @@ void stack::push(const double& x) {
 		exit(1);
 	}
 }
-void stack::pop(double& x) {
+
+template <typename T>
+void stack<T>::pop(T& x) {
 	if (!empty()) {
 		x = arr[n];
 		n--;
@@ -28,14 +34,20 @@ void stack::pop(double& x) {
 		exit(1);
 	}
 }
-bool stack::empty() const {
+
+template <typename T>
+bool stack<T>::empty() const {
 	return n == -1;
 }
-bool stack::full() const {
+
+template <typename T>
+bool stack<T>::full() const {
 	return NUM == n - 1;
 }
-void stack::print() {
-	double x;
+
+template <typename T>
+void stack<T>::print() {
+	T x;
 	while (!empty()) {
 		pop(x);
 		cout << x << " ";
@@ -43,16 +55,37 @@ void stack::print() {
 	cout << endl;
 }
 
-void swap(double* a, double* b)
+template <typename T>
+void swap(T* a, T* b)
 {
-	int t = *a;
+	T t = *a;
 	*a = *b;
 	*b = t;
 }
 
-int partition(double low, double high)
+template <typename T>
+ostream& operator<<(ostream& os, stack<T>& stack) {
+	T x;
+	while (!stack.empty()) {
+	 stack.pop(x);
+	 os << x;
+	}
+	return os;
+}
+
+template <typename T>
+istream& operator>>(istream& is, stack<T>& stack) {
+	string x;
+	while (is>>x) {
+		stack.push(x.c_str());
+	}
+	return is;
+}
+
+template <typename T>
+T stack::partition(int low, int high)
 {
-	double pivot = arr[high];    // pivot
+	T pivot = arr[high];    // pivot
 	int i = (low - 1);  // Index of smaller element
 
 	for (int j = low; j <= high - 1; j++)
@@ -67,29 +100,41 @@ int partition(double low, double high)
 	return (i + 1);
 }
 
-void stack::quickSort(double low, double high)
+template <typename T>
+void stack<T>::quickSort(int low, int high)
 {
 	if (low < high)
 	{
-		double pi = partition(arr, low, high);
+		T pi = partition(arr, low, high);
 		quickSort(low, pi - 1);
 		quickSort(pi + 1, high);
 	}
-}
+}
+
 
 int main() {
+	/*
+	//Uprajnenie 3
 	auto start = chrono::system_clock::now();
 	fstream io("C:\\Users\\grade\\Desktop\\sdp-repo\\sdp\\stack", ios::in);
-	stack stack;
+	stack<char> stack;
 	double elem;
 	while (io >> elem)
 	{
 		stack.push(elem);
 	}
-	stack.quickSort();
 	stack.print();
 	auto end = std::chrono::system_clock::now();
 	chrono::duration<double> elapsed_seconds = end - start;
 	cout << elapsed_seconds.count() << " seconds" << endl;
+	return 0;*/
+
+	//Uprajnenie 4
+
+	fstream fileOutput("C:\\Users\\grade\\Desktop\\sdp-repo\\sdp\\stack\\write.txt", ios::out);
+	fstream fileInput("C:\\Users\\grade\\Desktop\\sdp-repo\\sdp\\stack\\read.txt", ios::in);
+	stack<char> stack;
+	operator>>(fileOutput, stack);
+	operator<<(fileInput, stack);
 	return 0;
 }
