@@ -38,5 +38,6 @@ int main()
 	}
 	end = std::chrono::system_clock::now();
 	cout << elapsed_seconds.count() << " seconds" << endl;
+	fin.close();
 	return 0;
 }
