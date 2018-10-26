@@ -28,9 +28,9 @@ long long int fib_iterat(int n)
 
 int main()
 {
-	int num;
+	int num = 50;
 	cout << "Enter number of fibonacci element: ";
-	cin >> num;
+	//cin >> num;
 	auto start = high_resolution_clock::now();
 	fib_iterat(num);
 	auto end = high_resolution_clock::now();
