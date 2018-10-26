@@ -1,0 +1,3 @@
+﻿  main.cc
+c:\сдп-nedkonedev\sdp\lesson2\stack\stack\stack.h(91): warning C4715: 'Stack<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::pop': not all control paths return a value
+  Stack.vcxproj -> C:\СДП-NedkoNedev\sdp\Lesson2\stack\Debug\Stack.exe
