@@ -1,0 +1,6 @@
+﻿  stdafx.cpp
+  BinaryFile.cpp
+c:\mdobrinov\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(21): error C2561: 'main': function must return a value
+  c:\mdobrinov\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(13): note: see declaration of 'main'
+c:\mdobrinov\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(39): error C2561: 'main': function must return a value
+  c:\mdobrinov\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(13): note: see declaration of 'main'
