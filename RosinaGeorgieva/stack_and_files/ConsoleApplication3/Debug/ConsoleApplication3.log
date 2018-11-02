@@ -1,3 +1,0 @@
-﻿  ConsoleApplication3.cpp
-c:\users\grade\source\repos\up\stack_and_files\consoleapplication3\consoleapplication3.cpp(94): warning C4715: 'Stack<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::pop': not all control paths return a value
-  ConsoleApplication3.vcxproj -> C:\Users\grade\source\repos\UP\stack_and_files\Debug\ConsoleApplication3.exe
