@@ -23,7 +23,7 @@
     <ProjectGuid>{7123DD1A-CA56-4EE4-9DA0-52AD9BB9D910}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>BinaryFile</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <ProjectName>Problem1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

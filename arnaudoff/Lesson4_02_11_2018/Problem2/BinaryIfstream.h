@@ -19,10 +19,12 @@ public:
 			abort();
 		}
 	}
+
 	void SetSize(int size)
 	{
 		m_charSize = size;
 	}
+
 	friend BinaryIfstream& operator >> (BinaryIfstream& in, char* ptr);
 };
 
