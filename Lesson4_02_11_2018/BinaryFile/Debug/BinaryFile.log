@@ -1,0 +1,32 @@
+﻿  stdafx.cpp
+  BinaryFile.cpp
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(12): error C2065: 'string': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(12): error C2146: syntax error: missing ';' before identifier 'filename'
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(12): error C2065: 'filename': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(15): error C2065: 'ofstream': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(15): error C2146: syntax error: missing ';' before identifier 'fout'
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(15): error C2653: 'ios': is not a class or namespace name
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(15): error C2065: 'out': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(15): error C2065: 'binary': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(15): error C3861: 'fout': identifier not found
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(16): error C2065: 'fout': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(16): error C2228: left of '.is_open' must have class/struct/union
+  c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(16): note: type is 'unknown-type'
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(17): error C2065: 'cerr': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(17): error C2065: 'endl': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(22): error C2065: 'cout': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(22): error C2065: 'endl': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(23): error C2065: 'cin': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(23): error C2228: left of '.getline' must have class/struct/union
+  c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(23): note: type is 'unknown-type'
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(25): error C2065: 'fout': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(25): error C2228: left of '.write' must have class/struct/union
+  c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(25): note: type is 'unknown-type'
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(27): error C2065: 'fout': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(27): error C2228: left of '.close' must have class/struct/union
+  c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(27): note: type is 'unknown-type'
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(28): error C2065: 'cout': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(28): error C2065: 'endl': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(30): error C2065: 'cin': undeclared identifier
+c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(30): error C2228: left of '.get' must have class/struct/union
+  c:\users\grade\documents\git\velina_sdp\sdp\lesson4_02_11_2018\binaryfile\binaryfile.cpp(30): note: type is 'unknown-type'
