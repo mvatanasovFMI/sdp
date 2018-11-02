@@ -1,8 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <time.h>
-#include<string>
-#include <windows.h>
+#include <string>
 
 
 
@@ -56,7 +55,7 @@ void Stack<T>::push(float const& x) {
 template<typename T>
 void Stack<T>::print() {
 	while (!isEmpty()) {
-		printf("%f\n", pop());
+		printf("%c", pop());
 	}
 }
 
@@ -99,18 +98,9 @@ void Stack<T>::sortStack() {
 		}
 }
 
-string ExePath() {
-	char buffer[MAX_PATH];
-	GetModuleFileName(NULL, buffer, MAX_PATH);
-	string::size_type pos = string(buffer).find_last_of("\\/");
-	return string(buffer).substr(0, pos);
-}
-
 int main() {
 
 	//clock_t tStart = clock();
-
-	cout << "my directory is " << ExePath() << "\n";
 
 	Stack<char> st;
 
@@ -128,7 +118,7 @@ int main() {
 	st.print();
 
 	//printf("\nTime taken: %.6fs\n", (double)(clock() - tStart) / CLOCKS_PER_SEC);
-	system("pause");
+
 	return 0;
 }
 
