@@ -6,12 +6,22 @@ using namespace std;
 
 void QueueArray::copyQueue(QueueArray const & queue)
 {
-
+	if (m_capacity < queue.m_capacity) {
+		deleteQueue();
+		m_array = new int[queue.m_capacity];
+	}
+	m_capacity = queue.m_capacity;
+	m_front = queue.m_front;
+	m_rear = queue.m_rear;
+	m_count = queue.m_count;
+	for (int i = 0; i < m_capacity; i++) {
+		m_array[i] = queue.m_array[i];
+	}
 }
 
 void QueueArray::deleteQueue()
 {
-
+	delete[] m_array;
 }
 
 QueueArray::QueueArray(int size)
@@ -76,8 +86,8 @@ int QueueArray::peek()
 	if (isEmpty())
 	{
 		cout << "The Queue is empty.\n";
-		throw;
 		// TODO some error info
+		return 0;
 	}
 	return m_array[m_front];
 	// TODO get element
