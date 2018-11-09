@@ -6,12 +6,25 @@ using namespace std;
 
 void QueueArray::copyQueue(QueueArray const & queue)
 {
+	m_array = new int[queue.m_capacity];
+	m_capacity = queue.m_capacity;
+	m_count = queue.m_count;
 
+	for (int i = 0; i < m_count; i++)
+	{
+		m_array[i] = queue.m_array[i];
+	}
+
+	m_front = queue.m_front;
+	m_rear = queue.m_rear;
 }
 
 void QueueArray::deleteQueue()
 {
-
+	delete[] m_array;
+	m_front = 0;
+	m_rear = 0;
+	m_count = 0;
 }
 
 QueueArray::QueueArray(int size)
@@ -47,12 +60,29 @@ void QueueArray::dequeue()
 {
 	if (isEmpty())
 	{
-		// TODO some error info
+		cout << "queue is empty";
 	}
 
-	cout << "Removing " << m_array[m_front] << '\n';
+	else {
+		cout << "Removing " << m_array[m_front] << '\n';
 
-	// TODO remove element
+		int* temp = new int[m_count - 1];
+
+		for (int i = 1; i < m_count; i++)
+		{
+			temp[i - 1] = m_array[i];
+		}
+		m_count--;
+		delete[]m_array;
+		m_array = new int[m_capacity];
+		for (int i = 0; i < m_count; i++)
+		{
+			m_array[i] = temp[i];
+		}
+
+		m_front = 0;
+		m_rear = m_count - 1;
+	}
 }
 
 void QueueArray::display()
@@ -68,7 +98,23 @@ void QueueArray::enqueue(int item)
 		throw;// TODO some error info
 	}
 
-	// TODO put element
+	int* temp = new int[m_count + 1];
+
+	for (int i = 0; i < m_count; i++)
+	{
+		temp[i] = m_array[i];
+	}
+	temp[m_count] = item;
+	m_count++;
+	delete[]m_array;
+	m_array = new int[m_capacity];
+	for (int i = 0; i < m_count; i++)
+	{
+		m_array[i] = temp[i];
+	}
+
+	m_front = 0;
+	m_rear = m_count - 1;
 }
 
 int QueueArray::peek()
