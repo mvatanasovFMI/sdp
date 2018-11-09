@@ -1,17 +1,27 @@
 #include "pch.h"
 #include <iostream>
+#include <cassert>
 #include "QueueArray.h"
 
 using namespace std;
 
 void QueueArray::copyQueue(QueueArray const & queue)
 {
-
+	
+	m_capacity = queue.m_capacity;
+	m_array = new int[m_capacity];
+	assert(m_array != NULL);
+	for (int i = 0; i < m_capacity; i++) {
+		m_array[i] = queue.m_array[i];
+	}
+	m_count = queue.m_count;
+	m_rear = queue.m_rear;
+	m_front = queue.m_front;
 }
 
 void QueueArray::deleteQueue()
 {
-
+	delete[] m_array;
 }
 
 QueueArray::QueueArray(int size)
@@ -48,16 +58,25 @@ void QueueArray::dequeue()
 	if (isEmpty())
 	{
 		// TODO some error info
+		cerr << "The queue is empty!\n";
 	}
-
+	else {
 	cout << "Removing " << m_array[m_front] << '\n';
-
+	m_count--;
+	m_front++;
+	m_front = m_front % m_capacity;
 	// TODO remove element
+	}
 }
 
 void QueueArray::display()
 {
 	//copy queue and then get all element from the copied queue	
+	QueueArray temp = *this;
+	while (!temp.isEmpty()) {
+		cout << temp.peek() << endl;
+		temp.dequeue();
+	}
 }
 
 void QueueArray::enqueue(int item)
@@ -67,7 +86,10 @@ void QueueArray::enqueue(int item)
 		cout << "The Queue is full.\n";
 		throw;// TODO some error info
 	}
-
+	m_array[m_rear] = item;
+	m_count++;
+	m_rear++;
+	m_rear = m_rear % m_capacity;
 	// TODO put element
 }
 
