@@ -36,5 +36,6 @@ BinaryIfstream& operator >> (BinaryIfstream& in, DataType& data)
 BinaryIfstream& operator >> (BinaryIfstream& in, char* ptr)
 {
 	in.read(ptr, in.m_charSize);
+	//ptr[in.m_charSize-1] = '\0';
 	return in;
 }

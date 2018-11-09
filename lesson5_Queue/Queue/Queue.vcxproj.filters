@@ -15,31 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="QueueArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-<<<<<<< HEAD:Lesson4_02_11_2018_my/Problem2/Problem2.vcxproj.filters
-=======
-    <ClInclude Include="BinaryIfstream.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
->>>>>>> 981956548f08e12644e9fe69c844c4de3e019d87:Lesson4_02_11_2018/Problem2/Problem2.vcxproj.filters
-    <ClInclude Include="BinaryOfstream.h">
+    <ClInclude Include="QueueLinked.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="Queue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <ClCompile Include="QueueArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueLinked.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

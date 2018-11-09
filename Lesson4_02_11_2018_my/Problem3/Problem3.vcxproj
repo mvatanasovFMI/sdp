@@ -164,7 +164,17 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\cryptopp.v140.windesktop.dyn.rt-static.5.6.5.4\build\native\cryptopp.v140.windesktop.dyn.rt-static.targets" Condition="Exists('..\packages\cryptopp.v140.windesktop.dyn.rt-static.5.6.5.4\build\native\cryptopp.v140.windesktop.dyn.rt-static.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cryptopp.v140.windesktop.dyn.rt-static.5.6.5.4\build\native\cryptopp.v140.windesktop.dyn.rt-static.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cryptopp.v140.windesktop.dyn.rt-static.5.6.5.4\build\native\cryptopp.v140.windesktop.dyn.rt-static.targets'))" />
+  </Target>
 </Project>
