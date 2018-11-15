@@ -8,7 +8,7 @@
 using namespace std;
 using namespace std::chrono;
 
-//Function keeps track of the execution time of each method of the four data structures classes;
+//Function keeps track of the execution time of each method of the four data structure classes;
 //when the program is run, a file with the respective execution times is created, including the name of the class to which it refers.
 void ExecutionTime(DataStructure<int>* p, ofstream& file)
 {
