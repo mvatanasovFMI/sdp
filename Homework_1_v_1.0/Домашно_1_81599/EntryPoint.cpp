@@ -60,7 +60,7 @@ int main()
 	ofstream test_file;
 
 	file.open("execution_time.txt", ios::app);
-	test_file.open("stack_and_queue_data.txt", ios::app);
+	test_file.open("stack_and_queue_data.txt", ios::app);//a file for test ifstream & ofstream operators test purposes;
 	ArrayStack<int> a;
 	cin >> a;
 	/*cout << a;*/ //operator overloading contains pop function; in order to actually write something to a file
