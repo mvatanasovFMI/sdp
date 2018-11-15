@@ -34,11 +34,11 @@ public:
 
 	bool operator==(const ArrayStack &);
 
-	friend istream& operator>>(istream &, ArrayStack<T> &);
-	friend ostream& operator<<(ostream &, ArrayStack<T> &);
+	friend istream& operator>><T>(istream &, ArrayStack<T> &);
+	friend ostream& operator<<<T>(ostream &, ArrayStack<T> &);
 
-	friend ifstream operator>>(ifstream &, ArrayStack<T> &);
-	friend ofstream operator<<(ofstream &, ArrayStack<T> &);
+	friend ifstream& operator>><T>(ifstream &, ArrayStack<T> &);
+	friend ofstream& operator<<<T>(ofstream &, ArrayStack<T> &);
 	
 };
 
@@ -143,7 +143,7 @@ template<typename T>
 	 {
 		 return arr[size - 1];
 	 }
-//	 return T();
+	 //return T();
 }
 
 template<typename T>
@@ -191,13 +191,13 @@ istream& operator>>(istream & is, ArrayStack<T> & st)
 }
 
 template<typename T>
-ostream & operator<<(ostream & os, ArrayStack<T> & st)
+ostream& operator<<(ostream & os, ArrayStack<T> & st)
 {
 	T elem;
 	ArrayStack<T> temp = st;
 	while (!temp.isEmpty())
 	{
-		st.pop(elem);
+		temp.pop(elem);
 		os << elem << " ";
 	}
 	os << endl;
@@ -205,7 +205,7 @@ ostream & operator<<(ostream & os, ArrayStack<T> & st)
 }
 
 template<typename T>
-ifstream operator>>(ifstream &ifs, ArrayStack<T>& st)
+ifstream& operator>>(ifstream &ifs, ArrayStack<T>& st)
 {
 	T elem;
 	while (ifs >> elem)
@@ -216,13 +216,13 @@ ifstream operator>>(ifstream &ifs, ArrayStack<T>& st)
 }
 
 template<typename T>
-ofstream operator<<(ofstream & ofs, ArrayStack<T>& st)
+ofstream& operator<<(ofstream & ofs, ArrayStack<T>& st)
 {
 	ArrayStack<T> temp = st;
 	T elem;
 	while (!temp.isEmpty())
 	{
-		st.pop(elem);
+		temp.pop(elem);
 		ofs << elem << " ";
 	}
 	ofs << endl;

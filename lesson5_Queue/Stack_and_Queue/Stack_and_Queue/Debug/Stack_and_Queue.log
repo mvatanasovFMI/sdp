@@ -1,6 +1,6 @@
 ﻿  main.cc
 c:\users\probook\desktop\сдп\сдп-упражнение\stack_and_queue\stack_and_queue\array_queue.h(77): warning C4715: 'ArrayQueue<int>::top': not all control paths return a value
-c:\users\probook\desktop\сдп\сдп-упражнение\stack_and_queue\stack_and_queue\array-stack.h(147): warning C4715: 'ArrayStack<int>::top': not all control paths return a value
-c:\users\probook\desktop\сдп\сдп-упражнение\stack_and_queue\stack_and_queue\linked-queue.h(156): warning C4715: 'LinkedQueue<int>::top': not all control paths return a value
 c:\users\probook\desktop\сдп\сдп-упражнение\stack_and_queue\stack_and_queue\linked-stack.h(122): warning C4715: 'LinkedStack<int>::top': not all control paths return a value
+c:\users\probook\desktop\сдп\сдп-упражнение\stack_and_queue\stack_and_queue\linked-queue.h(156): warning C4715: 'LinkedQueue<int>::top': not all control paths return a value
+c:\users\probook\desktop\сдп\сдп-упражнение\stack_and_queue\stack_and_queue\array-stack.h(147): warning C4715: 'ArrayStack<int>::top': not all control paths return a value
   Stack_and_Queue.vcxproj -> C:\Users\Probook\Desktop\СДП\сдп-упражнение\Stack_and_Queue\Debug\Stack_and_Queue.exe

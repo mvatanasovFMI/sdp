@@ -38,11 +38,11 @@ public:
 
 	bool operator==(const LinkedQueue<T> &);
 
-	friend istream& operator>>(istream &, LinkedQueue<T> &);
-	friend ostream& operator<<(ostream &, LinkedQueue<T> &);
+	friend istream& operator>><T>(istream &, LinkedQueue<T> &);
+	friend ostream& operator<<<T>(ostream &, LinkedQueue<T> &);
 
-	friend ifstream operator>>(ifstream &, LinkedQueue<T> &);
-	friend ofstream operator<<(ofstream &, LinkedQueue<T> &);
+	friend ifstream& operator>><T>(ifstream &, LinkedQueue<T> &);
+	friend ofstream& operator<<<T>(ofstream &, LinkedQueue<T> &);
 };
 
 template<typename T>
@@ -212,7 +212,7 @@ ostream& operator<<(ostream & os, LinkedQueue<T> & q)
 }
 
 template <typename T>
-ifstream operator>>(ifstream & ifs, LinkedQueue<T> & q)
+ifstream& operator>>(ifstream & ifs, LinkedQueue<T> & q)
 {
 	T elem;
 	while (ifs >> elem)
@@ -223,7 +223,7 @@ ifstream operator>>(ifstream & ifs, LinkedQueue<T> & q)
 }
 
 template <typename T>
-ofstream operator<<(ofstream & ofs, LinkedQueue<T> & q)
+ofstream& operator<<(ofstream & ofs, LinkedQueue<T> & q)
 {
 	QueueNode<T>* ptr = q.front;
 	while (ptr)

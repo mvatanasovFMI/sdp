@@ -1,15 +1,11 @@
 #ifndef _STACK_H_
 #define _STACK_H_
 
+#include "generic-data-structure.h"
+
 template <typename T>
-class Stack
+class Stack : public GenericDataStructure<T>
 {
-public:
-	virtual bool isEmpty() const = 0;
-	virtual T& top() = 0;
-	virtual void push(const T &) = 0;
-	virtual bool pop(T&) = 0;
-	virtual void print() = 0;
 };
 
 #endif // !_STACK_H_

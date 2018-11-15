@@ -28,11 +28,11 @@ public:
 
 	bool operator==(const ArrayQueue<T> &);
 
-	friend istream& operator>>(istream &, ArrayQueue<T> &);
-	friend ostream& operator<<(ostream &, ArrayQueue<T> &);
+	friend istream& operator>><T>(istream &, ArrayQueue<T> &);
+	friend ostream& operator<<<T>(ostream &, ArrayQueue<T> &);
 
-	friend ifstream operator>>(ifstream &, ArrayQueue<T> &);
-	friend ofstream operator<<(ofstream &, ArrayQueue<T> &);
+	friend ifstream& operator>><T>(ifstream &, ArrayQueue<T> &);
+	friend ofstream& operator<<<T>(ofstream &, ArrayQueue<T> &);
 
 };
 
@@ -140,7 +140,7 @@ ostream & operator<<(ostream & os, ArrayQueue<T> & q)
 	ArrayQueue<T> temp = q;
 	while (!temp.isEmpty())
 	{
-		q.pop(elem);
+		temp.pop(elem);
 		os << elem << " ";
 	}
 	os << endl;
@@ -148,7 +148,7 @@ ostream & operator<<(ostream & os, ArrayQueue<T> & q)
 }
 
 template<typename T>
-ifstream operator>>(ifstream &ifs, ArrayQueue<T>& q)
+ifstream& operator>>(ifstream &ifs, ArrayQueue<T>& q)
 {
 	T elem;
 	while (ifs >> elem)
@@ -159,13 +159,13 @@ ifstream operator>>(ifstream &ifs, ArrayQueue<T>& q)
 }
 
 template<typename T>
-ofstream operator<<(ofstream & ofs, ArrayQueue<T>& q)
+ofstream& operator<<(ofstream & ofs, ArrayQueue<T>& q)
 {
 	ArrayQueue<T> temp = q;
 	T elem;
 	while (!temp.isEmpty())
 	{
-		q.pop(elem);
+		temp.pop(elem);
 		ofs << elem << " ";
 	}
 	ofs << endl;

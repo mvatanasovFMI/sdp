@@ -34,11 +34,11 @@ public:
 
 	bool operator==(const LinkedStack &);
 
-	friend istream& operator>>(istream &, LinkedStack<T> &);
-	friend ostream& operator<<(ostream &, LinkedStack<T> &);
+	friend istream& operator>><T>(istream &, LinkedStack<T> &);
+	friend ostream& operator<<<T>(ostream &, LinkedStack<T> &);
 
-	friend ifstream operator>>(ifstream &, LinkedStack<T> &);
-	friend ofstream operator<<(ofstream &, LinkedStack<T> &);
+	friend ifstream& operator>><T>(ifstream &, LinkedStack<T> &);
+	friend ofstream& operator<<<T>(ofstream &, LinkedStack<T> &);
 };
 
 
@@ -207,7 +207,7 @@ ostream& operator<<(ostream & os, LinkedStack<T> & st)
 }
 
 template <typename T>
-ifstream operator>>(ifstream & ifs, LinkedStack<T> & st)
+ifstream& operator>>(ifstream & ifs, LinkedStack<T> & st)
 {
 	T elem;
 	while (ifs >> elem)
@@ -218,7 +218,7 @@ ifstream operator>>(ifstream & ifs, LinkedStack<T> & st)
 }
 
 template <typename T>
-ofstream operator<<(ofstream & ofs, LinkedStack<T> & st)
+ofstream& operator<<(ofstream & ofs, LinkedStack<T> & st)
 {
 	StackNode<T>* ptr = st.front;
 	while (ptr)

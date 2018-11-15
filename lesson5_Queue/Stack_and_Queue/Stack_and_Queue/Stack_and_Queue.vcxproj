@@ -120,6 +120,7 @@
   <ItemGroup>
     <ClInclude Include="array-stack.h" />
     <ClInclude Include="array_queue.h" />
+    <ClInclude Include="generic-data-structure.h" />
     <ClInclude Include="linked-queue.h" />
     <ClInclude Include="linked-stack.h" />
     <ClInclude Include="queue.h" />
