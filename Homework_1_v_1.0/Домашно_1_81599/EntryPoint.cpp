@@ -8,8 +8,8 @@
 using namespace std;
 using namespace std::chrono;
 
-//Тази функция пази времето за изпълнение на всеки един от методите на класовете;
-//със стартирането на програмата създава файл, в който това време се записва, заедно с това за кой метод се отнася.
+//Г’Г Г§ГЁ ГґГіГ­ГЄГ¶ГЁГї ГЇГ Г§ГЁ ГўГ°ГҐГ¬ГҐГІГ® Г§Г  ГЁГ§ГЇГєГ«Г­ГҐГ­ГЁГҐ Г­Г  ГўГ±ГҐГЄГЁ ГҐГ¤ГЁГ­ Г®ГІ Г¬ГҐГІГ®Г¤ГЁГІГҐ Г­Г  ГЄГ«Г Г±Г®ГўГҐГІГҐ;
+//Г±ГєГ± Г±ГІГ Г°ГІГЁГ°Г Г­ГҐГІГ® Г­Г  ГЇГ°Г®ГЈГ°Г Г¬Г ГІГ  Г±ГєГ§Г¤Г ГўГ  ГґГ Г©Г«, Гў ГЄГ®Г©ГІГ® ГІГ®ГўГ  ГўГ°ГҐГ¬ГҐ Г±ГҐ Г§Г ГЇГЁГ±ГўГ , Г§Г ГҐГ¤Г­Г® Г± ГІГ®ГўГ  Г§Г  ГЄГ®Г© Г¬ГҐГІГ®Г¤ Г±ГҐ Г®ГІГ­Г Г±Гї.
 void ExecutionTime(DataStructure<int>* p, ofstream& file)
 {
 	auto start = system_clock::now();
@@ -42,7 +42,7 @@ void ExecutionTime(DataStructure<int>* p, ofstream& file)
 	 end = system_clock::now();
 	 duration = duration_cast<nanoseconds>(end - start);
 	file << "IsFull execution time: " << duration.count() << '\n';
-
+ 
 	start = system_clock::now();
 	p->Length();
 	end = system_clock::now();
@@ -63,8 +63,8 @@ int main()
 	test_file.open("stack_and_queue_data.txt", ios::app);
 	ArrayStack<int> a;
 	cin >> a;
-	/*cout << a;*/ ///тази функция използва Pop(), затова е добре да е закоментирана,
-	test_file << a;/// ако все пак искаме да пазим някакви елементи във файла
+	/*cout << a;*/ ///ГІГ Г§ГЁ ГґГіГ­ГЄГ¶ГЁГї ГЁГ§ГЇГ®Г«Г§ГўГ  Pop(), Г§Г ГІГ®ГўГ  ГҐ Г¤Г®ГЎГ°ГҐ Г¤Г  ГҐ Г§Г ГЄГ®Г¬ГҐГ­ГІГЁГ°Г Г­Г ,
+	test_file << a;/// Г ГЄГ® ГўГ±ГҐ ГЇГ ГЄ ГЁГ±ГЄГ Г¬ГҐ Г¤Г  ГЇГ Г§ГЁГ¬ Г­ГїГЄГ ГЄГўГЁ ГҐГ«ГҐГ¬ГҐГ­ГІГЁ ГўГєГў ГґГ Г©Г«Г 
 	DataStructure<int>* pa = &a;
 	file << "Array stack: \n";
 	ExecutionTime(pa, file);
