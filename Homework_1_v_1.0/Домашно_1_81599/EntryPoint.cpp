@@ -8,8 +8,8 @@
 using namespace std;
 using namespace std::chrono;
 
-//Òàçè ôóíêöèÿ ïàçè âðåìåòî çà èçïúëíåíèå íà âñåêè åäèí îò ìåòîäèòå íà êëàñîâåòå;
-//ñúñ ñòàðòèðàíåòî íà ïðîãðàìàòà ñúçäàâà ôàéë, â êîéòî òîâà âðåìå ñå çàïèñâà, çàåäíî ñ òîâà çà êîé ìåòîä ñå îòíàñÿ.
+//Function keeps track of the execution time of each method of the four data structures classes;
+//when the program is run, a file with the respective execution times is created, including the name of the class to which it refers.
 void ExecutionTime(DataStructure<int>* p, ofstream& file)
 {
 	auto start = system_clock::now();
@@ -63,8 +63,8 @@ int main()
 	test_file.open("stack_and_queue_data.txt", ios::app);
 	ArrayStack<int> a;
 	cin >> a;
-	/*cout << a;*/ ///òàçè ôóíêöèÿ èçïîëçâà Pop(), çàòîâà å äîáðå äà å çàêîìåíòèðàíà,
-	test_file << a;/// àêî âñå ïàê èñêàìå äà ïàçèì íÿêàêâè åëåìåíòè âúâ ôàéëà
+	/*cout << a;*/ //operator overloading contains pop function; in order to actually write something to a file
+	test_file << a;/// we should not cout the stack;
 	DataStructure<int>* pa = &a;
 	file << "Array stack: \n";
 	ExecutionTime(pa, file);
