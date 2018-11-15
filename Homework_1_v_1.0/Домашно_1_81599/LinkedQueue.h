@@ -24,8 +24,8 @@ public:
 	T Pop();
 	T Top();
 	bool IsEmpty() const;
-	bool IsFull() const;//фиктивна функция, колкото да дефинира виртуалната функция от базовия си клас;
-						//ясно е, че този вид стек по дефиниция не може да бъде пълен, затова тази функция винаги връща 0;
+	bool IsFull() const;//A fictitious function; it sipmly defines the respective virtual function from the basic class;
+			    //clearly a linked stack cannot be full, so it returns 0 by default;
 
 	int Length();
 
