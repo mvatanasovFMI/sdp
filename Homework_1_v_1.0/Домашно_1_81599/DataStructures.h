@@ -6,7 +6,7 @@ using namespace std;
 
 const int max_size = 200;
 
-//структура, която използваме в реализацията на свързана опашка и свързан списък;
+//a structure used in the LinkedQueue and the LinkedStack realisation;
 template <typename T>
 struct Node
 {
@@ -15,8 +15,8 @@ struct Node
 };
 
 
-//базов абстрактен клас, който обединява всички изисквани класове; тази реализация е възможна, защото имат
-//еднакви функции с различни операции;
+//Basic abstract class which unites all the required data structures;
+//this realisation is possible, as all classes use the same function names with different operations in them;
 template <typename T>
 class DataStructure
 {
@@ -27,7 +27,7 @@ public:
 	virtual bool IsEmpty() const = 0;
 	virtual bool IsFull() const = 0;
 	virtual int Length() = 0;
-	void Print();//няма необходимост да бъде виртуална, тъй като реализацията и при всички структури от задачата е еднаква;
+	void Print();//doesn't need to be virtual, as it's unified for all data structures;
 };
 
 template<typename T>
