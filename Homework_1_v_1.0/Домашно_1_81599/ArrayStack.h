@@ -94,7 +94,6 @@ inline int ArrayStack<T>::Length()
 template<typename T>
 inline bool ArrayStack<T>::operator==(ArrayStack<T>& rhs)
 {
-	cout << Length() << rhs.Length();
 	if (Length() == rhs.Length()) return 1;
 	return 0;
 }
