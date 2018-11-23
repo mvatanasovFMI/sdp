@@ -6,7 +6,7 @@
 template <class T>
 class LinkedList {
 private:
-	//Item<T> *m_pStart;
+	Item<T> *m_pStart;
 	Item<T> *m_pEnd;
 	size_t m_size;
 	    
@@ -27,33 +27,33 @@ private:
 		}
 	}
 
-	static void Copy(Item<T>* pEnd,Item<T>*& pCloneEnd)
+	static void Copy(Item<T>* pStart, Item<T>*& pCloneStart, Item<T>*& pCloneEnd)
 	{
-		pEnd = nullptr;
+		pCloneStart = nullptr;
 		pCloneEnd = nullptr;
 
-		if (pEnd == nullptr)
+		if (pStart == nullptr)
 			return;
 
-		Item<T>* pNewEnd = nullptr;
+		Item<T>* pNewStart = nullptr;
 
 		try
 		{
-			pNewEnd = new Item<T>(pEnd->m_data);
+			pNewStart = new Item<T>(pStart->m_data);
 
-			Item<T>* pNextIterationItem = pEnd->m_pNext;
+			Item<T>* pNextIterationItem = pStart->m_pNext;
 
-			Item<T>* pCurrentIterationItem = pNewEnd;
-			int counter = 0;
-			while (counter!=m_size)
+			Item<T>* pCurrentIterationItem = pNewStart;
+
+			while (pNextIterationItem)
 			{
 				pCurrentIterationItem->m_pNext = new Item<T>(pNextIterationItem->m_data);
 				pCurrentIterationItem = pCurrentIterationItem->m_pNext;
 				pNextIterationItem = pNextIterationItem->m_pNext;
-				counter++;
 			}
 
-			pCloneEnd = pNewEnd;
+			pCloneStart = pNewStart;
+			pCloneEnd = pCurrentIterationItem;
 		}
 		catch (std::bad_alloc&)
 		{
@@ -101,7 +101,7 @@ public:
 
 	void Delete()
 	{
-		Delete(m_pEnd);
+		Delete(m_pStart);
 		Initialize();
 	}
 
@@ -120,13 +120,14 @@ public:
 	
 	Iterator<T> GetIterator() const
 	{
-		return Iterator<T>(m_pEnd);
+		return Iterator<T>(m_pStart);
 	}
 };
 
 template <class T>
 void LinkedList<T>::Initialize()
 {
+	m_pStart = nullptr;
 	m_pEnd = nullptr;
 	m_size = 0;
 }
@@ -137,9 +138,9 @@ Item<T> * LinkedList<T>::FindItemAt(size_t Index) const
 	if (Index < 0 || Index >= this->m_size)
 		return nullptr;
 
-	Item<T> *p = m_pEnd;
+	Item<T> *p = m_pStart;
 
-	for (int i = -1; i < Index; ++i)
+	for (int i = 0; i < Index; ++i)
 		p = p->m_pNext;
 
 	return p;
@@ -151,33 +152,33 @@ bool LinkedList<T>::Copy(LinkedList<T> const & Other)
 	if (Other.IsEmpty())
 		return true;
 
-	Item<T>  *pNewEnd;
-	Copy(Other.m_pEnd, pNewEnd);
+	Item<T> *pNewStart, *pNewEnd;
+	Copy(Other.m_pStart, pNewStart, pNewEnd);
 
-	if (!pNewEnd)
+	if (!pNewStart)
 		return false;
 
 	if (m_size == 0)
-		m_pEnd = pNewEnd;
+		m_pStart = pNewStart;
 	else
-		m_pEnd->m_pNext = pNewEnd;
+		m_pEnd->m_pNext = pNewStart;
 
 	m_pEnd = pNewEnd;
 
 	m_size += Other.m_size;
 
-	return pNewEnd != m_pEnd;
+	return pNewStart != nullptr;
 }
 
 template <class T>
 void LinkedList<T>::PushFront(const T & Value)
 {
-	Item<T> *pNewItem = new Item<T>(Value, m_pEnd->m_pNext);
+	Item<T> *pNewItem = new Item<T>(Value, m_pStart);
 
 	if (IsEmpty())
 		m_pEnd = pNewItem;
 
-	m_pEnd->m_pNext = pNewItem;
+	m_pStart = pNewItem;
 	++m_size;
 }
 
@@ -188,7 +189,7 @@ void LinkedList<T>::PushBack(T const & Value)
 
 	if (IsEmpty())
 	{
-		m_pEnd = pNewItem;
+		m_pStart = m_pEnd = pNewItem;
 	}
 	else
 	{
@@ -205,11 +206,11 @@ void LinkedList<T>::PopFront()
 	if (IsEmpty())
 		return;
 
-	Item<T> *pStartItemToBeDeleted = m_pEnd->m_pNext;
+	Item<T> *pStartItemToBeDeleted = m_pStart;
 
-	m_pEnd->m_pNext = m_pEnd->m_pNext->m_pNext;
+	m_pStart = m_pStart->m_pNext;
 
-	if (m_pEnd->m_pNext == nullptr)
+	if (m_pStart == nullptr)
 		m_pEnd = nullptr;
 
 	--m_size;
@@ -230,7 +231,7 @@ T& LinkedList<T>::GetStartData()
 	if (m_size == 0)
 		throw std::exception();
 
-	return m_pEnd->m_pNext->m_data;
+	return m_pStart->m_data;
 }
 
 template <class T>

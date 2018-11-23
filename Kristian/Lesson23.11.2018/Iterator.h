@@ -33,8 +33,8 @@ public:
 		m_pCurrent = m_pStart;
 	}
 
-	/*bool EndReached() const
+	bool EndReached() const
 	{
 		return m_pCurrent == nullptr;
-	}*/
+	}
 };
