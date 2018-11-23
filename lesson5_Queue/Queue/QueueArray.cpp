@@ -6,6 +6,14 @@ using namespace std;
 
 void QueueArray::copyQueue(QueueArray const & queue)
 {
+	m_capacity = queue.m_capacity;
+	m_front = queue.m_front;
+	m_rear = queue.m_rear;
+	m_count = queue.m_count;
+	for (int i = 0; i < m_count; i++)
+	{
+
+	}
 
 }
 
@@ -47,6 +55,8 @@ void QueueArray::dequeue()
 {
 	if (isEmpty())
 	{
+		cout << "The queue is empty!" << endl;
+
 		// TODO some error info
 	}
 
