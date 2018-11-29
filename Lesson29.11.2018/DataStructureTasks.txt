@@ -1,0 +1,19 @@
+Lesson 29/11/2018
+
+Task1:
+https://www.hackerrank.com/challenges/bfsshortreach/problem
+
+Task2:
+https://www.hackerrank.com/challenges/ctci-connected-cell-in-a-grid/problem?h_r=internal-search
+
+Task3:
+https://www.hackerrank.com/challenges/ctci-linked-list-cycle/problem?h_r=internal-search
+
+Task4:
+https://www.hackerrank.com/challenges/merge-two-sorted-linked-lists/problem?h_r=internal-search
+
+Task5:
+https://www.hackerrank.com/challenges/insert-a-node-into-a-sorted-doubly-linked-list/problem
+
+Task6:
+https://www.hackerrank.com/challenges/delete-duplicate-value-nodes-from-a-sorted-linked-list/problem
