@@ -1,19 +1,22 @@
 Lesson 29/11/2018
 
-Task1:
+Task1: 55 points
 https://www.hackerrank.com/challenges/bfsshortreach/problem
 
-Task2:
+Task2: 45 points
 https://www.hackerrank.com/challenges/ctci-connected-cell-in-a-grid/problem?h_r=internal-search
 
-Task3:
+Task3: 25 points
 https://www.hackerrank.com/challenges/ctci-linked-list-cycle/problem?h_r=internal-search
 
-Task4:
+Task4: 5 points
 https://www.hackerrank.com/challenges/merge-two-sorted-linked-lists/problem?h_r=internal-search
 
-Task5:
+Task5: 5 points
 https://www.hackerrank.com/challenges/insert-a-node-into-a-sorted-doubly-linked-list/problem
 
-Task6:
+Task6: 5 points
 https://www.hackerrank.com/challenges/delete-duplicate-value-nodes-from-a-sorted-linked-list/problem
+
+Max score:
+130 points
