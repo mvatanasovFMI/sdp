@@ -1,0 +1,9 @@
+Problem 1: The height of a binary tree is the number of edges between the tree's root and its furthest leaf.
+https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/problem
+
+Problem 2: You are given a pointer to the root of a binary tree. You need to print the level order traversal of this tree. In level order traversal, we visit the nodes level by level from left to right
+https://www.hackerrank.com/challenges/tree-level-order-traversal/problem
+
+Problem 3: https://www.youtube.com/watch?v=CJMcXSQjwTQ
+https://www.hackerrank.com/challenges/tree-huffman-decoding/problem
+
