@@ -23,6 +23,10 @@ Greedy Algorithms:
 Реализирайте Dijkstras shortest path, като използвате свързано представяне на граф:
 https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
 
+Пробвайте да използвате следната структура unordered_map.
+https://www.geeksforgeeks.org/map-vs-unordered_map-c/
+
+
 Бонус Задача:
 https://www.hackerrank.com/challenges/dijkstrashortreach/problem (Hackarrank 60 points)
 
