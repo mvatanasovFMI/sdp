@@ -5,14 +5,15 @@
 https://en.wikipedia.org/wiki/Transpose_graph
 
 Задача 2:
-Проверете дали даден граф е Bipartite? (и двете представяне на графа Матрица на съседство и свързано представяне)
+Проверете дали даден граф е Bipartite? (Матрица на съседство и свързано представяне)
 https://www.youtube.com/watch?v=gCtqZ-3cPik
 
 Задача 3:
-A directed graph is strongly connected if there is a path between all pairs of vertices. 
-A strongly connected component (SCC) of a directed graph is a maximal strongly connected subgraph
 За даден граф изведете на стардатния изход всички strongly connected components.
 Използвайте свързано представяне на Граф.
+A directed graph is strongly connected if there is a path between all pairs of vertices. 
+A strongly connected component (SCC) of a directed graph is a maximal strongly connected subgraph
+
 https://en.wikipedia.org/wiki/Strongly_connected_component
 Kosaraju’s algorithm?
 
