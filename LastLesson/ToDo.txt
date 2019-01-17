@@ -1,0 +1,192 @@
+/*
+Problem LAST:
+1. Copy and paste the source code
+!!!You have very unclear and confusing version of implementation of Dijsktra. 
+You have to optimise and refactore it!!!!
+2. Refactor solution
+	1. Create Object Oriented Design
+	3. Optimise Solution
+		1. using Hash Table- https://www.geeksforgeeks.org/map-vs-unordered_map-c/
+		2. using Priority queue - http://pages.cs.wisc.edu/~vernon/cs367/notes/11.PRIORITY-Q.html
+
+*/
+
+
+#include "pch.h"
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+struct Vertice;
+
+
+typedef vector<Vertice> AdjecantList;
+typedef vector<AdjecantList> Graph;
+
+struct Vertice
+{
+	int m_verticeIndex;
+	int m_length = 0;
+	
+private:
+	Vertice()
+	{
+	}
+public:
+	Vertice(int verticeIndex, int length)
+	{
+		this->m_length = length;
+		this->m_verticeIndex = verticeIndex;
+	}
+};
+
+struct Distance
+{
+	int m_vertexIndex;
+	int m_distance;
+private:
+	Distance()
+	{
+
+	}
+public:
+	Distance(int vertexIndex, int distance)
+	{
+		m_vertexIndex = vertexIndex;
+		m_distance = distance;
+	}
+};
+
+Graph graph =
+{
+	{
+		Vertice(1, 0), Vertice(2, 3), Vertice(3, 1)
+	},
+	{
+		Vertice(3, 0), Vertice(2, 1)
+	}
+};
+
+AdjecantList findEdges(Graph& graph, const int& el)
+{
+	for (int j = 0; j < graph.size(); j++)
+	{
+		if (graph[j].size() > 0 && graph[j][0].m_verticeIndex == el)
+			return graph[j];
+	}
+
+	return AdjecantList();
+}
+
+int findIndexOfDistance(vector<Distance>& distances, int verticeIndex)
+{
+	for (int j = 0; j < distances.size(); j++)
+	{
+		if (distances[j].m_vertexIndex == verticeIndex)
+			return j;
+	}
+
+	throw;
+}
+
+bool isVisited(const vector<int>& visited, int el) // OPtimise
+{
+	for (int i = 0; i < visited.size(); i++)
+	{
+		if (visited[i] == el)
+			return true;
+		
+	}
+	return false;
+}
+
+void init(const Graph& graph, vector<Distance> & distances)
+{
+	vector<int> visited;
+	for (int i = 0; i < graph.size(); i++)
+	{
+		for (int k = 0; k < graph[i].size(); k++)
+		{
+			auto vertice = graph[i][k].m_verticeIndex;
+			if (isVisited(visited, vertice))
+			{
+				continue;
+			} 
+			else
+			{
+				visited.push_back(vertice);
+				distances.push_back(Distance(vertice, INT32_MAX));
+			}
+		}
+	}
+}
+
+int min(int x, int y)
+{
+	return x < y ? x : y;
+}
+
+int findMinOfDistance(const vector<int>& candidates, vector<Distance>& distances)
+{
+	int minIndex = -1;
+	int minValue = INT32_MAX;
+	for (int i = 0; i < candidates.size(); i++)
+	{
+		auto distanceIndex = findIndexOfDistance(distances, candidates[i]);
+		auto distance = distances[distanceIndex];
+		if (distance.m_distance < minValue)
+		{
+			minValue = distance.m_distance;
+			minIndex = i;
+		}
+	}
+	return minIndex;
+}
+
+void dijsktra(Graph& graph, int source, vector<int> & visited, vector<Distance>& distances)
+{
+	
+	init(graph, distances);
+
+	vector<int> candidates = vector<int>();
+	candidates.push_back(source);
+	int indexOfDistance = findIndexOfDistance(distances, source);
+	distances[indexOfDistance].m_distance = 0;
+
+	while (!candidates.empty())
+	{
+		auto indexOfMinimulElement = findMinOfDistance(candidates, distances);
+		auto candidate = candidates[indexOfMinimulElement];
+		candidates.erase(candidates.begin() + indexOfMinimulElement);
+
+		visited.push_back(candidate);
+		auto edges = findEdges(graph, candidate);
+		for (int i = 1; i < edges.size(); i++)
+		{
+			auto vertex = edges[i];
+			if (isVisited(visited, vertex.m_verticeIndex))
+			{
+				continue;
+			}
+			else
+			{
+				int indexOfDistance = findIndexOfDistance(distances, vertex.m_verticeIndex);
+				int sourceIndexOfDistance = findIndexOfDistance(distances, candidate);
+				distances[indexOfDistance].m_distance = min(distances[indexOfDistance].m_distance, distances[sourceIndexOfDistance].m_distance + vertex.m_length);
+				if (!isVisited(candidates, vertex.m_verticeIndex))
+				{
+					candidates.push_back(vertex.m_verticeIndex);
+				}
+			}
+		}
+	}
+}
+
+int main()
+{ 
+	auto visited = vector<int>();
+	vector<Distance> distances;
+	dijsktra(graph, 1, visited, distances);
+}
